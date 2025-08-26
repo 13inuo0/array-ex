@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>상품리스트</h1>
+    <!-- 상품을 출력 -->
+    <div id="product-list">
+      <!-- js출력  -->
+      <!-- <div class="product">
+        <h2>노트북</h2>
+        <p>가격 : 10000 원</p>
+       </div> -->
+    </div>
     <script>
-        
+      const products = [
+        { id: 1, name: "노트북", price: 1200000 },
+        { id: 2, name: "마우스", price: 25000 },
+        { id: 3, name: "키보드", price: 55000 },
+        { id: 4, name: "모니터", price: 350000 },
+      ];
+      //   map() 상품을 html 요소로 반환하기
+      const productHtml = pruoducts
+        .map(function (product) {
+          console.log(product);
+          return;
+          `
+        <div class="product">
+        <h2>${products.name}</h2>
+        <p>가격 : ${products.price.tolocalstrim()} 원</p>
+       </div>
+        `;
+          // tolocalstrim() 3개 단위로 금액 표시하는 명령어
+        })
+        .join("");
+      const productList = document.querySelector("#product-list");
+      productList.innerHTML = productHtml;
+    //  filter() : 10만원 이상 상품만 출력하기
+    
     </script>
-</body>
+  </body>
 </html>
